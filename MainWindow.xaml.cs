@@ -436,7 +436,7 @@ public partial class MainWindow : Window
     private void BtnTexture_Click(object sender, RoutedEventArgs e)
     {
         if (RuleList.SelectedItem is not ColorRule r) return;
-        var dlg = new OpenFileDialog { Filter = "Images|*.png;*.jpg;*.jpeg;*.bmp" };
+        var dlg = new OpenFileDialog { Filter = "圖片檔案 (*.png;*.jfif;*.jpg;*.jpeg;*.bmp;*.gif;*.webp;*.tiff)|*.png;*.jfif;*.jpg;*.jpeg;*.bmp;*.gif;*.webp;*.tiff|所有檔案 (*.*)|*.*" };
         if (dlg.ShowDialog() != true) return;
 
         try { r.SetTexture(File.ReadAllBytes(dlg.FileName), Path.GetFileName(dlg.FileName)); }
